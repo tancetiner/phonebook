@@ -10,6 +10,9 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors());
 
+// for displaying static content
+app.use(express.static("build"));
+
 // local persons list
 let persons = [
   {
