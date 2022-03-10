@@ -1,9 +1,16 @@
+// phonebook-backend
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 
+// for getting the body from request
+const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
+//for cross origin resource sharing
+const cors = require("cors");
+app.use(cors());
+
+// local persons list
 let persons = [
   {
     name: "Tan",
@@ -32,10 +39,12 @@ let persons = [
   },
 ];
 
+// automatically generating the ids
 const generateId = () => {
   return parseInt(Math.random() * 1000000);
 };
 
+// requests
 app.get("/api/persons", (request, response) => {
   response.json(persons);
 });
@@ -85,7 +94,8 @@ app.post("/api/persons", (request, response) => {
   response.json(person);
 });
 
-const PORT = 3001;
+// for port and listen
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
