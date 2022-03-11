@@ -65,8 +65,6 @@ app.post("/api/persons", (request, response) => {
     number: body.number,
   });
 
-  persons = persons.concat(person);
-
   person
     .save()
     .then(formatPerson)
