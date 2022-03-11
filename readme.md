@@ -7,3 +7,5 @@ Heroku app deployed at: https://phonebook999.herokuapp.com
 * Backend: NodeJS
 * Database: MongoDB
 
+![homeScreen](./homeScreen.png)
+
