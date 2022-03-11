@@ -10,14 +10,11 @@ app.use(bodyParser.json());
 const cors = require("cors");
 app.use(cors());
 
-// for displaying static content
-app.use(express.static("build"));
-
 // for mongoDB
 const Person = require("./models/person");
 
-// for environment variables
-require("dotenv").config();
+// for displaying static content
+app.use(express.static("build"));
 
 // local persons list
 let persons = [
